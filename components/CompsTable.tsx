@@ -60,16 +60,16 @@ export default function CompsTable({
                 <td className="px-3 py-3 text-slate-700">
                   {comp.bedrooms} bd / {comp.bathrooms} ba
                 </td>
-                <td className="px-3 py-3 text-slate-700">
+                <td className="px-3 py-3 font-mono text-slate-700">
                   {formatNumber(comp.squareFootage)}
                 </td>
-                <td className="px-3 py-3 font-semibold text-slate-900">
+                <td className="px-3 py-3 font-mono font-semibold text-bob-ink">
                   {formatCurrency(comp.rent)}
                 </td>
-                <td className="px-3 py-3 text-slate-700">
+                <td className="px-3 py-3 font-mono text-slate-700">
                   {formatCurrency(comp.rent / comp.squareFootage, 2)}
                 </td>
-                <td className="px-3 py-3 text-slate-700">
+                <td className="px-3 py-3 font-mono text-slate-700">
                   {formatDistance(comp.distanceMiles)}
                 </td>
                 <td className="px-3 py-3 text-slate-500">
@@ -121,12 +121,14 @@ function MatchBadge({ score }: { score: number }) {
   const pct = Math.round(score * 100);
   const style =
     pct >= 75
-      ? "bg-emerald-50 text-emerald-700"
+      ? "bg-action-100 text-action-700"
       : pct >= 55
       ? "bg-amber-50 text-amber-700"
       : "bg-slate-100 text-slate-500";
   return (
-    <span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${style}`}>
+    <span
+      className={`rounded-full px-2 py-0.5 font-mono text-xs font-semibold ${style}`}
+    >
       {pct}%
     </span>
   );

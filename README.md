@@ -1,6 +1,7 @@
-# DSCR Rental Check
+# Rent Check by AskBobAI
 
-Enter a property address and get:
+An AskBobAI tool, styled with the AskBobAI brand system (Figtree, AskBob Blue,
+and AskBob Green for actions). Enter a property address and get:
 
 - 🏠 **Property details** for the subject address
 - 📊 An **estimated fair-market rent**, computed _from comparable rentals_ so the number is explainable

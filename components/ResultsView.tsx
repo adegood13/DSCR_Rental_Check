@@ -25,7 +25,7 @@ export default function ResultsView({ result }: { result: AnalysisResult }) {
             />
           </svg>
           <p>
-            <strong>Demo mode — data is simulated.</strong> Property details and
+            <strong>Demo mode: data is simulated.</strong> Property details and
             comps are generated for this address, and comp links open the map
             location rather than a live listing. Connect a data provider
             (see&nbsp;<code className="rounded bg-amber-100 px-1">README</code>)

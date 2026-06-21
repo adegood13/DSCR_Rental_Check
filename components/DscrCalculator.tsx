@@ -10,7 +10,7 @@ import {
 import { formatCurrency, formatPercent } from "@/lib/format";
 
 const RATING_STYLES: Record<DscrResult["rating"], string> = {
-  Strong: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  Strong: "bg-action-50 text-action-700 border-action-200",
   Adequate: "bg-brand-50 text-brand-700 border-brand-100",
   Tight: "bg-amber-50 text-amber-700 border-amber-200",
   Negative: "bg-red-50 text-red-700 border-red-200",
@@ -128,7 +128,7 @@ export default function DscrCalculator({
                 {result.rating}
               </span>
             </div>
-            <div className="mt-1 text-4xl font-bold tracking-tight">
+            <div className="mt-1 font-mono text-4xl font-bold tracking-tight">
               {result.dscr.toFixed(2)}
             </div>
             <p className="mt-1 text-xs opacity-80">
@@ -232,14 +232,16 @@ function Line({
 }) {
   const toneClass =
     tone === "positive"
-      ? "text-emerald-600"
+      ? "text-action-700"
       : tone === "negative"
       ? "text-red-600"
-      : "text-slate-900";
+      : "text-bob-ink";
   return (
     <div className="flex items-center justify-between">
-      <dt className="text-slate-500">{label}</dt>
-      <dd className={`${strong ? "font-bold" : "font-medium"} ${toneClass}`}>
+      <dt className="text-bob-muted">{label}</dt>
+      <dd
+        className={`font-mono ${strong ? "font-bold" : "font-medium"} ${toneClass}`}
+      >
         {value}
       </dd>
     </div>

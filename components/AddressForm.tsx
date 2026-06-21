@@ -92,7 +92,7 @@ export default function AddressForm({
 function Spinner() {
   return (
     <svg
-      className="h-4 w-4 animate-spin text-white"
+      className="h-4 w-4 animate-spin text-bob-ink"
       viewBox="0 0 24 24"
       fill="none"
     >
