@@ -1,0 +1,20 @@
+# Netlify configuration for this Next.js app.
+#
+# Netlify auto-detects Next.js and installs its official runtime
+# (@netlify/plugin-nextjs) automatically — you should NOT install that plugin
+# yourself. This file just makes the build deterministic and pins a Node version
+# that satisfies Next.js 16 (which requires Node 20.9+). The /api/analyze route
+# is deployed automatically as a Netlify Function.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# --- Live data (optional) -------------------------------------------------
+# The app runs in demo mode with no configuration. To use live RentCast data,
+# set these in Netlify under Site settings -> Environment variables instead of
+# committing them here:
+#   DATA_PROVIDER = "rentcast"
+#   RENTCAST_API_KEY = "your_key"

@@ -67,6 +67,38 @@ in `lib/providers/`, register it in `lib/providers/index.ts`, and you're done.
 > ⚠️ Don't scrape Zillow/Redfin — it violates their terms of service and breaks
 > constantly. Use a licensed data API instead.
 
+## Deploy to Netlify
+
+Netlify auto-detects Next.js and installs its runtime for you — no plugin
+install needed. A `netlify.toml` is included (it just pins the build command and
+Node 22). The `/api/analyze` route is deployed automatically as a Netlify
+Function, and the app works out of the box in demo mode.
+
+**Via the Netlify UI (easiest):**
+
+1. Push this branch to GitHub (already done).
+2. In Netlify: **Add new site → Import an existing project → GitHub**, pick this
+   repo.
+3. Set **Branch to deploy** to the branch you want to preview (e.g.
+   `claude/nifty-turing-m048vu`). Netlify auto-fills the build command
+   (`npm run build`) — leave the publish directory blank; the Next runtime
+   handles it.
+4. **Deploy.** You'll get a live preview URL like
+   `https://<your-site>.netlify.app`.
+
+**Via the Netlify CLI:**
+
+```bash
+npm i -g netlify-cli
+netlify init      # link to a site, or create one
+netlify deploy    # draft deploy with a preview URL
+netlify deploy --prod
+```
+
+**For live data on Netlify:** add `DATA_PROVIDER=rentcast` and
+`RENTCAST_API_KEY` under **Site settings → Environment variables**, then
+redeploy. Leave them unset to stay in demo mode.
+
 ## Project structure
 
 ```
